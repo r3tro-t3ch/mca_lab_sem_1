@@ -1,24 +1,29 @@
-#ifndef INT_STACK_H
-#define INT_STACK_H
+/**
+ * @file stack.h
+ * @author Vishnu Joshi (joshi.vishnu1994@gmail.com)
+ * @brief stack definiton using linked list
+ * @version 0.1
+ * @date 2022-02-17
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
-#define STACK_OPERATION_UNSUCCESSFUL -1
+#include "../node/node.h"
 
 typedef struct STACK_T{
-    int *elements;
-    int top;
+    node_t *header,*top;
+    int size;
 } stack_t;
 
-
 // create stack
-stack_t* create_stack();
+stack_t* new_stack();
 
 // push
-void push( stack_t *stack, int element);
+void push(int element, stack_t* stack);
 
 // pop
-int pop(stack_t *stack);
+node_t* pop( stack_t* stack);
 
 // print stack
-void print_stack(stack_t *stack);
-
-#endif
+void print_stack(stack_t* stack);
